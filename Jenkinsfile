@@ -1,4 +1,4 @@
-node('slv1')
+node
  {
     stage('ContDownload')
  {
