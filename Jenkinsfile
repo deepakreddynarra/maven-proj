@@ -4,6 +4,10 @@ node('slv1')
  {
     git 'https://github.com/venkat9822891/maven-project1.git'
 }
+  stage('ContBuild')
+ {
+  sh 'package'
+}
 
    stage('ContDeployment')
  {
