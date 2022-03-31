@@ -1,4 +1,3 @@
-
 node('slv1')
  {
     stage('ContDownload')
@@ -13,7 +12,7 @@ node('slv1')
 
    stage('ContDeployment')
  {
-   deploy adapters: [tomcat8(credentialsId: '42489c7c-4385-4f32-8ff1-41dddf81541b', path: '', url: 'http://172.31.33.5:8080')], contextPath: '/test', war: '**/*.war'
+     deploy adapters: [tomcat8(credentialsId: 'test-use', path: '', url: 'http://172.31.33.5:8080')], contextPath: '/test', war: '**/*.war'
 }
    stage('Conttesting')
  {
@@ -22,6 +21,6 @@ node('slv1')
 }
    stage('ContDelivery')
  {
-   deploy adapters: [tomcat8(credentialsId: 'prod', path: '', url: 'http://172.31.39.20:8080')], contextPath: '/production', war: '**/*.war'
+   deploy adapters: [tomcat8(credentialsId: 'production', path: '', url: 'http://172.31.39.20:8080')], contextPath: '/test', war: '**/*.war'
 }
 }
